@@ -17,9 +17,32 @@ const toggleTheme = document.querySelector(themeTab);
 const switcher = document.querySelectorAll(switcherBtn);
 const currentTheme = localStorage.getItem(theme);
 
-
+/* Modal */
 const openModal = document.querySelectorAll(modalOpen);
 const closeModal = document.querySelectorAll(modalClose);
+
+const setActive = (elm, selector) => {
+  if (document.querySelector(`${selector}.${active}`) !== null) {
+    document.querySelector(`${selector}.${active}`).classList.remove(active);
+} else {
+  elm.classList.add(active);
+}
+
+toggleTheme.addEventListener('click', function() {
+  const tab = this.parentElement.parentElement.parentElement;
+  if (!tab.className.includes(open)) {
+    tab.classList.add(open);    
+  } else {
+    tab.classList.remove(open);
+  }
+});
+
+for (const elm of switcher) {
+  elm.addEventListener('click', function() {
+    const toggle = this.dataset.toggle;
+    setActive(elm, switcherBtn);
+  })
+}
 
 // Full Site Modal "Open buttons"
 for (const elm of openModal) {
