@@ -12,6 +12,7 @@ const modalClose = '[data-close]';
 const isVisible = 'is-visible';
 
 const root = document.documentElement;
+
 /* Theme */
 const toggleTheme = document.querySelector(themeTab);
 const switcher = document.querySelectorAll(switcherBtn);
@@ -28,12 +29,21 @@ const setActive = (elm, selector) => {
   elm.classList.add(active);
 }
 
+const setTheme = (val) => {
+  if (val === dark) {
+    root.setAttribute(dataTheme, dark);
+  } else {
+    root.setAttribute(dataTheme, light);
+  }
+}
+
 toggleTheme.addEventListener('click', function() {
   const tab = this.parentElement.parentElement.parentElement;
   if (!tab.className.includes(open)) {
     tab.classList.add(open);    
   } else {
     tab.classList.remove(open);
+    localStorage.setItem(theme, light);
   }
 });
 
@@ -41,6 +51,7 @@ for (const elm of switcher) {
   elm.addEventListener('click', function() {
     const toggle = this.dataset.toggle;
     setActive(elm, switcherBtn);
+    setTheme(toggle);
   })
 }
 
