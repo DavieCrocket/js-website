@@ -6,10 +6,10 @@
   --color-text: #161c2d;
   --color-text-base: #161c2d;
   --border: #383f53;
-};
-
+}
+ 
 .hero-bg {
-  background-image: url("./assets/images/hero-pattern.webp");
+  background-image: url("../assets/images/hero-pattern.webp");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
