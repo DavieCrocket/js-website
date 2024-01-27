@@ -39,6 +39,20 @@ const setTheme = (val) => {
   }
 }
 
+if (currentTheme) {
+  root.setAttribute(dataTheme, currentTheme);
+  switcher.forEach((btn) => {
+    btn.classList.remove(active);
+  })
+}
+
+
+if (currentTheme === dark) {
+  switcher[1].classList.add(active);
+} else {
+  switcher[0].classList.add(active);
+}
+
 toggleTheme.addEventListener('click', function() {
   const tab = this.parentElement.parentElement;
   if (!tab.className.includes(open)) {
