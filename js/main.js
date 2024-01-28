@@ -24,6 +24,7 @@ const currentTheme = localStorage.getItem(theme);
 /* Portfolio */
 const filterLink = document.querySelectorAll(dataFilter);
 const portfolioItems = document.querySelectorAll(portfolioData);
+const searchBox = document.querySelector('#search');
 
 /* Modal */
 const openModal = document.querySelectorAll(modalOpen);
@@ -76,6 +77,17 @@ for (const elm of switcher) {
     setTheme(toggle);
   });
 }
+
+searchBox.addEventListener('keyup', (e) => {
+  const searchInput = e.target.value.toLowerCase().trim();
+  portfolioItems.forEach((card) => {
+    if (card.dataset.item.includes(searchInput)) {
+      card.style.display = 'block';
+    } else {
+      card.style.display = 'none';
+    }
+  })
+});
 
 for (const link of filterLink) {
   link.addEventListener('click', function() {
