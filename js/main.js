@@ -77,18 +77,6 @@ for (const elm of switcher) {
   });
 }
 
-<<<<<<< HEAD
-searchBox.addEventListener('keyup', (e) => {
-  const searchInput = e.target.value.toLowerCase().trim();
-  portfolioItems.forEach((card) => {
-    if (card.dataset.item.includes(searchInput)) {
-      card.style.display = 'block';
-    } else {
-      card.style.display = 'none';
-    }
-  })
-});
-
 const portfolioContainer = document.querySelector(".portfolio-grid");
 
 function createPortfolioCard(project) {
@@ -129,6 +117,7 @@ function loadProjects() {
     const card = createPortfolioCard(project);
     portfolioGrid.appendChild(card);
   });
+}
 
   const projectCards = document.querySelectorAll('.pc-wrapper');
 
