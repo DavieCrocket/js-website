@@ -24,7 +24,6 @@ const currentTheme = localStorage.getItem(theme);
 /* Portfolio */
 const filterLink = document.querySelectorAll(dataFilter);
 const portfolioItems = document.querySelectorAll(portfolioData);
-const searchBox = document.querySelector('#search');
 
 /* Modal */
 const openModal = document.querySelectorAll(modalOpen);
@@ -78,6 +77,7 @@ for (const elm of switcher) {
   });
 }
 
+<<<<<<< HEAD
 searchBox.addEventListener('keyup', (e) => {
   const searchInput = e.target.value.toLowerCase().trim();
   portfolioItems.forEach((card) => {
@@ -146,6 +146,16 @@ function loadProjects() {
     const searchInput = e.target.value.toLowerCase().trim();
     projectCards.forEach((card) => {
       if (card.dataset.card.includes(searchInput)) {
+=======
+for (const link of filterLink) {
+  link.addEventListener('click', function() {
+    setActive(link, '.filter-link');
+    const filter = this.dataset.filter;
+    portfolioItems.forEach((card) => {
+      if (filter === 'all') {
+        card.style.display = 'block';
+      } else if (card.dataset.item === filter) {
+>>>>>>> parent of 7ace244 (Complete Search Input logic - JavaScript)
         card.style.display = 'block';
       } else {
         card.style.display = 'none';    
