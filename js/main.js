@@ -89,23 +89,70 @@ searchBox.addEventListener('keyup', (e) => {
   })
 });
 
-for (const link of filterLink) {
-  link.addEventListener('click', function() {
-    setActive(link, '.filter-link');
-    const filter = this.dataset.filter;
-    portfolioItems.forEach((card) => {
-      if (filter === 'all') {
-        card.style.display = 'block';
-      } else if (card.dataset.item === filter) {
+const portfolioContainer = document.querySelector(".portfolio-grid");
+
+function createPortfolioCard(project) {
+  const card = document.createElement("div");
+  card.classList.add("pc-wrapper");
+  card.setAttribute("data-card", project.projectType);
+  card.setAttribute("project-id", project.modal.id);
+
+  const cardBody = document.createElement("div");
+  cardBody.classList.add("pc-body");
+
+  const cardImage = document.createElement("img");
+  cardImage.setAttribute("src", `./assets/images/${project.imgURL}`);
+  cardImage.setAttribute("alt", "portfolio icon");
+  cardBody.appendChild(cardImage);
+
+  const cardPopupBox = document.createElement("div");
+  cardPopupBox.classList.add("pc-popup-box");
+  cardPopupBox.setAttribute("data-open", project.modal.id);
+
+  const cardPopupBoxCategory = document.createElement("div");
+  cardPopupBoxCategory.textContent = project.category;
+  cardPopupBox.appendChild(cardPopupBoxCategory);
+
+  const cardPopupBoxTitle = document.createElement("h3");
+  cardPopupBoxTitle.textContent = project.title;
+  cardPopupBox.appendChild(cardPopupBoxTitle);
+
+  cardBody.appendChild(cardPopupBox);
+  card.appendChild(cardBody);
+  portfolioContainer.appendChild(card);
+
+  return card;
+}
+
+function loadProjects() {
+  projectsData.forEach((project) => {
+    const card = createPortfolioCard(project);
+    portfolioGrid.appendChild(card);
+  });
+
+  const projectCards = document.querySelectorAll('.pc-wrapper');
+
+  // Portfolio Filter Trigger
+  for (const link of filterLink) {
+    link.addEventListener('click', function() {
+      setActive(link, '.filter-link');
+      const filter = this.dataset.filter;
+      portfolioFilter(filter, projectCards);
+    });
+  };
+  
+  // Portfolio Search
+  searchBox.addEventListener('keyup', (e) => {
+    const searchInput = e.target.value.toLowerCase().trim();
+    projectCards.forEach((card) => {
+      if (card.dataset.card.includes(searchInput)) {
         card.style.display = 'block';
       } else {
-        card.style.display = 'none';
+        card.style.display = 'none';    
       }
     })
   });
-}
-
-
+};
 
 /* Full Site Modal "Open buttons" */
 for (const elm of openModal) {

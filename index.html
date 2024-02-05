@@ -1,197 +1,126 @@
 <!DOCTYPE html>
 <html lang="en" class="js-focus-visible" data-js-focus-visible data-theme="light">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="./css/theme.css">
-  <link rel="stylesheet" href="./css/base.css">
-  <link rel="stylesheet" href="./css/styles.css">
-  <link rel="stylesheet" href="./css/pages.css">
-  <title>folio</title>
-</head>
-<body>
-  <div class="theme-panel">
-    <div class="theme-body">
-      <span>Change Theme</span>
-      <div class="btn-group">
-        <button data-toggle="light" class="switcher-btn active">Light</button>
-        <button data-toggle="dark" class="switcher-btn">Dark</button>
-      </div>
-      <button class="theme-tab">
-        <i class="fas fa-chevron-left"></i>
-      </button>
-    </div>
-  </div>
-  <main class="site-wrapper">
-    <header class="site-header">
-      <nav class="navbar">
-        <div class="brand-logo">
-          <a href="/"><h2>folio.</h2></a>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./css/theme.css">
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/pages.css">
+    <title>folio</title>
+  </head>
+  <body>
+    <div class="theme-panel">
+      <div class="theme-body">
+        <span>Change Theme</span>
+        <div class="btn-group">
+          <button data-toggle="light" class="switcher-btn active">Light</button>
+          <button data-toggle="dark" class="switcher-btn">Dark</button>
         </div>
-        <div class="navbar-nav">
-          <ul class="ul-defaults-none main-menu">
-            <li class="nav-item">Home</li>
-            <li class="nav-item" data-open="about">About Me</li>
-            <li class="nav-item" data-open="contact">Contact</li>
+        <button class="theme-tab">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+      </div>
+    </div>
+    <main class="site-wrapper">
+      <header class="site-header">
+        <nav class="navbar">
+          <div class="brand-logo">
+            <a href="/"><h2>folio.</h2></a>
+          </div>
+          <div class="navbar-nav">
+            <ul class="ul-defaults-none main-menu">
+              <li class="nav-item">Home</li>
+              <li class="nav-item" data-open="about">About Me</li>
+              <li class="nav-item" data-open="contact">Contact</li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+
+      <!-- Hero Section -->
+      <section class="hero-bg">
+        <div class="container">
+          <div class="hero-content">
+            <div class="code-icon">
+              <i class="fas fa-code"></i>
+            </div>
+            <h2 class="header-lg">Code. Eat. Sleep.</h2>
+            <div class="sub-header">I create meaningful solutions for your brand and products.
+              <br>
+              Give your customers the best experience possible.
+            </div>
+            <div class="btn btn-primary round-pill">
+              <a href="#" data-open="contact">Let's talk now</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Portfolio Section  -->
+      <section class="portfolio-section">
+        <div class="container search-container">
+          <label for="search">
+            <input autocomplete="off" id="search" type="text" class="search-input" placeholder="Search...">
+            <i class="fas fa-search"></i>
+          </label> 
+          <ul class="portfolio-filter-nav ul-defaults-none">
+            <li data-filter="all" class="filter-link active">All Work</li>
+            <li data-filter="web" class="filter-link">Web Development</li>
+            <li data-filter="app" class="filter-link">App Development</li>
+            <li data-filter="ui" class="filter-link">UI Design</li>
           </ul>
         </div>
-      </nav>
-    </header>
+        <div class="portfolio-grid">
+          
+        </div>
+      </section>
 
-    <!-- Hero Section -->
-    <section class="hero-bg">
-      <div class="container">
-        <div class="hero-content">
-          <div class="code-icon">
-            <i class="fas fa-code"></i>
+      
+      <!-- Modals -->
+      <!-- About Page Modal -->
+      <div id="about" class="full-site-modal page-block" data-animation="zoomInOut">
+        <header class="modal-header">
+          <h3>ABOUT PAGE</h3>
+          <i class="fa fa-times" data-close></i>
+        </header>
+        <div class="modal-body">
+          <div class="img-wrapper">
+            <img src="./assets/images/img4.jpg" alt="head shot">
           </div>
-          <h2 class="header-lg">Code. Eat. Sleep.</h2>
-          <div class="sub-header">I create meaningful solutions for your brand and products.
-            <br>
-            Give your customers the best experience possible.
-          </div>
-          <div class="btn btn-primary round-pill">
-            <a href="#" data-open="contact">Let's talk now</a>
+            <h2>Jason Brewer</h2>
+            <p>text 1</p>
+            <p>text 2</p>
+          <div>
+            <div>Email Me:</div>
+            <a href="mailto:jason@devslopes.com">jason@devslopes.com</a>
           </div>
         </div>
       </div>
-    </section>
 
-    <!-- Portfolio Section  -->
-    <section class="portfolio-section">
-      <div class="container search-container">
-        <label for="search">
-          <input autocomplete="off" id="search" type="text" class="search-input" placeholder="Search...">
-          <i class="fas fa-search"></i>
-        </label> 
-        <ul class="portfolio-filter-nav ul-defaults-none">
-          <li data-filter="all" class="filter-link active">All Work</li>
-          <li data-filter="web" class="filter-link">Web Development</li>
-          <li data-filter="app" class="filter-link">App Development</li>
-          <li data-filter="ui" class="filter-link">UI Design</li>
-        </ul>
-      </div>
-      <div class="portfolio-grid">
-        <div class="portfolio-card" data-item="web">
-          <div class="card-body">
-            <img src="./assets/images/img1.jpg" alt="portfolio icon">
-            <a href="#" class="card-popup-box">
-              <div>Web Development</div>
-              <h3>Food Website</h3>
-            </a>
+      <!-- Contact Page Modal -->
+      <div id="contact" class="full-site-modal page-block" data-animation="zoomInOut">
+        <header class="modal-header">
+          <h3>CONTACT PAGE</h3>
+          <i class="fa fa-times" data-close></i>
+        </header>
+        <div class="modal-body">
+          <div class="img-wrapper">
+            <img src="./assets/images/img4.jpg" alt="head shot">
           </div>
-        </div>
-        <div class="portfolio-card" data-item="web">
-          <div class="card-body">
-            <img src="./assets/images/portfolio-2.jpg" alt="portfolio icon">
-            <a href="#" class="card-popup-box">
-              <div>Skate Development</div>
-              <h3>Food Website</h3>
-            </a>
-          </div>
-        </div>
-        <div class="portfolio-card" data-item="web">
-          <div class="card-body">
-            <img src="./assets/images/portfolio-3.jpg" alt="portfolio icon">
-            <a href="#" class="card-popup-box">
-              <div>Web Development</div>
-              <h3>Eating Website</h3>
-            </a>
-          </div>
-        </div>
-        <div class="portfolio-card" data-item="web">
-          <div class="card-body">
-            <img src="./assets/images/portfolio-4.jpg" alt="portfolio icon">
-            <a href="#" class="card-popup-box">
-              <div>Web Development</div>
-              <h3>Social Website</h3>
-            </a>
-          </div>
-        </div>
-        <div class="portfolio-card" data-item="app">
-          <div class="card-body">
-            <img src="./assets/images/portfolio-5.jpg" alt="portfolio icon">
-            <a href="#" class="card-popup-box">
-              <div>App Development</div>
-              <h3>Game App</h3>
-            </a>
-          </div>
-        </div>
-        <div class="portfolio-card" data-item="app">
-          <div class="card-body">
-            <img src="./assets/images/portfolio-6.jpg" alt="portfolio icon">
-            <a href="#" class="card-popup-box">
-              <div>App Development</div>
-              <h3>Gambling App</h3>
-            </a>
-          </div>
-        </div>
-        <div class="portfolio-card" data-item="ui">
-          <div class="card-body">
-            <img src="./assets/images/portfolio-7.jpg" alt="portfolio icon">
-            <a href="#" class="card-popup-box">
-              <div>UI Design</div>
-              <h3>Food Website</h3>
-            </a>
-          </div>
-        </div>
-        <div class="portfolio-card" data-item="ui">
-          <div class="card-body">
-            <img src="./assets/images/portfolio-8.jpg" alt="portfolio icon">
-            <a href="#" class="card-popup-box">
-              <div>UI Design</div>
-              <h3>Fantastic Design</h3>
-            </a>
+            <h2>Jason Brewer</h2>
+            <p>text 1</p>
+            <p>text 2</p>
+          <div>
+            <div>Email Me:</div>
+            <a href="mailto: jason@devslopes.com">jason@devslopes.com</a>
           </div>
         </div>
       </div>
-    </section>
-
-    
-    <!-- Modals -->
-    <!-- About Page Modal -->
-    <div id="about" class="full-site-modal page-block" data-animation="zoomInOut">
-      <header class="modal-header">
-        <h3>ABOUT PAGE</h3>
-        <i class="fa fa-times" data-close></i>
-      </header>
-      <div class="modal-body">
-        <div class="img-wrapper">
-          <img src="./assets/images/img4.jpg" alt="head shot">
-        </div>
-          <h2>Jason Brewer</h2>
-          <p>text 1</p>
-          <p>text 2</p>
-        <div>
-          <div>Email Me:</div>
-          <a href="mailto:jason@devslopes.com">jason@devslopes.com</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Contact Page Modal -->
-    <div id="contact" class="full-site-modal page-block" data-animation="zoomInOut">
-      <header class="modal-header">
-        <h3>CONTACT PAGE</h3>
-        <i class="fa fa-times" data-close></i>
-      </header>
-      <div class="modal-body">
-        <div class="img-wrapper">
-          <img src="./assets/images/img4.jpg" alt="head shot">
-        </div>
-          <h2>Jason Brewer</h2>
-          <p>text 1</p>
-          <p>text 2</p>
-        <div>
-          <div>Email Me:</div>
-          <a href="mailto: jason@devslopes.com">jason@devslopes.com</a>
-        </div>
-      </div>
-    </div>
-  </main>
+    </main>
 
 
-  <script type="text/javascript" src=./js/main.js></script>
-</body>
+    <script type="text/javascript" src=./js/main.js></script>
+  </body>
 </html>
