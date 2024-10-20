@@ -54,7 +54,6 @@ if (currentTheme) {
   })
 }
 
-
 if (currentTheme === dark) {
   switcher[1].classList.add(active);
 } else {
@@ -104,8 +103,6 @@ for (const link of filterLink) {
     })
   });
 }
-
-
 
 /* Full Site Modal "Open buttons" */
 for (const elm of openModal) {
