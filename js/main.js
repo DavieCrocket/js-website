@@ -1,3 +1,5 @@
+import { cards } from "../data/portfolioCards";
+
 const theme = "theme";
 const dataTheme = "data-theme";
 const themeTab = ".theme-tab";
@@ -13,6 +15,7 @@ const isVisible = "is-visible";
 
 const dataFilter = "[data-filter]";
 const portfolioData = "[data-item]";
+const portfolioGrid = document.getElementsByClassName('portfolio-grid')
 
 root = document.documentElement;
 
@@ -22,6 +25,10 @@ const switcher = document.querySelectorAll(switcherBtn);
 const currentTheme = localStorage.getItem(theme);
 
 /* Portfolio */
+  // Cards
+const portfolioCards = cards.querySelectorAll(".portfolio-card");
+
+  // Card Filter
 const filterLink = document.querySelectorAll(dataFilter);
 const portfolioItems = document.querySelectorAll(portfolioData);
 const searchBox = document.querySelector("#search");
@@ -77,6 +84,7 @@ for (const elm of switcher) {
   });
 }
 
+/* portfolio card search box */
 searchBox.addEventListener("keyup", (e) => {
   const searchInput = e.target.value.toLowerCase().trim();
   portfolioItems.forEach((card) => {
@@ -88,6 +96,14 @@ searchBox.addEventListener("keyup", (e) => {
   });
 });
 
+/* insert portfolio cards into HTML page */
+for (let i = 0; i < portfolioCards.length; i++) {
+  // portfolioGrid.appendChild(portfolioCard[i].innerHTML);
+  console.log(portfolioCards);
+  
+}
+
+/* portfolio card filter */
 for (const link of filterLink) {
   link.addEventListener("click", function () {
     setActive(link, ".filter-link");
@@ -112,6 +128,7 @@ for (const elm of openModal) {
   });
 }
 
+/* Full Site Modal "Close buttons" */
 for (const elm of closeModal) {
   elm.addEventListener("click", function () {
     this.parentElement.parentElement.classList.remove(isVisible);

@@ -1,4 +1,4 @@
-export const projectsData = [
+const projectsData = [
   {
     projectType: "web",
     imgURL: "portfolio-1.jpg",
